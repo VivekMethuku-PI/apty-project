@@ -1,0 +1,6 @@
+# Copy to terraform/envs/<env>/backend.hcl after applying terraform/tfstate (gitignored).
+#   terraform -chdir=terraform/tfstate output -raw backend_hcl
+bucket         = "apty-env-banner-tfstate-ACCOUNT_ID"
+region         = "ap-south-1"
+dynamodb_table = "apty-env-banner-tf-lock"
+encrypt        = true

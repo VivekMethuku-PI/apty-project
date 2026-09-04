@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Environment Banner — __ENVIRONMENT__</title>
+  <style>
+    :root { --bg: #14130f; --fg: #f3efe4; --muted: #8d8878; --rule: #2c2a22; --accent: #c4a35a; }
+    body[data-env="Prod"] { --accent: #4f9d78; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg); color: var(--fg);
+      font-family: Georgia, "Iowan Old Style", serif;
+      display: flex; flex-direction: column;
+    }
+    .bar {
+      padding: 1.25rem 1.75rem; border-bottom: 1px solid var(--rule);
+      font-family: ui-monospace, Menlo, monospace; font-size: 0.75rem;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+    }
+    main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 2.5rem 1.75rem; border-left: 8px solid var(--accent); }
+    .kicker { font-family: ui-monospace, Menlo, monospace; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.85rem; }
+    h1 { font-size: clamp(4.5rem, 16vw, 9rem); font-weight: 600; line-height: 0.9; }
+  </style>
+</head>
+<body data-env="__ENVIRONMENT__">
+  <div class="bar">Apty · Environment Banner</div>
+  <main>
+    <p class="kicker">Running in</p>
+    <h1>__ENVIRONMENT__</h1>
+  </main>
+</body>
+</html>

@@ -1,0 +1,4 @@
+*
+!index.html.tmpl
+!nginx.conf
+!render-index.sh
