@@ -2,13 +2,15 @@
 
 One static page that shows Dev or Prod. Same template, two paths: Terraform on AWS (S3 + CloudFront) and Helm on Docker Desktop Kubernetes. The environment name comes from a Terraform variable or a Helm value, not from a copied page.
 
+**What this demonstrates:** reusable Terraform modules, separate Dev/Prod state with S3 + DynamoDB locking, a private S3 origin behind CloudFront Origin Access Control, a Helm chart with probes and resource limits, and a GitHub Actions pipeline running `fmt`, `validate` and `plan` on every PR.
+
 ## Live URLs
 
 Dev: https://d256ge7kfuz3m5.cloudfront.net
 
 Prod: https://d2w32b0ev6bl6b.cloudfront.net
 
-Leave them up until you hear back. Destroy with:
+These may be torn down to save cost. Destroy with:
 
 ```bash
 terraform -chdir=terraform/envs/dev destroy
